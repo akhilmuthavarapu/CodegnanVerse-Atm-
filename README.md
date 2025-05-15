@@ -156,7 +156,7 @@ View account details using account number and PIN.
 
 ## 📬 Contact
 
-If you have any questions, feel free to connect with me on [LinkedIn]([https://www.linkedin.com](https://www.linkedin.com/in/venkata-akhil-muthavarapu-12042424a/)).
+If you have any questions, feel free to connect with me on [LinkedIn]([(https://www.linkedin.com/in/venkata-akhil-muthavarapu-12042424a/)]).
 
 ---
 
