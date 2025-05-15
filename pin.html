@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PIN Generation - Codegnan Bank</title>
+  <style>
+    body, html {height: 100%; margin: 0; font-family: Arial, sans-serif;}
+    video {position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;}
+    .form-box {width: 800px;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, rgba(255,255,255,0.9) rgba(200,200,255,0.9)); padding: 40px; border-radius: 15px; text-align: center;}
+    .form-box h2 {margin-bottom: 20px; color: #333;}
+    input {width: 80%; padding: 10px; margin: 10px 0; border: none; border-radius: 5px; margin-right: 30px;}
+    button {margin-top: 10px; padding: 12px 20px; border: none; border-radius: 25px; background: #8e2de2; background: linear-gradient(to right, #4a00e0, #8e2de2); color: white; font-size: 16px; cursor: pointer; transition: transform 0.2s;}
+    button:hover {transform: scale(1.1);}
+    #Pin{
+      margin-right: 120px;
+    }
+    .form-box h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+      color:aqua;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+  </style>
+</head>
+<body>
+
+<video autoplay muted loop>
+  <source src="https://motionbgs.com/media/5339/stock-trading.960x540.mp4" type="video/mp4">
+</video>
+
+<div class="form-box">
+  <h2>🔐 PIN Generation</h2>
+  <form action="/pinaccnodata" method="POST" >
+    <input name="accno" type="text" placeholder="Account Number" id="accNo" required> <button type="submit">Verify</button>
+  </form>
+  <form action="/otpdata" method="POST" >
+    <input name="otppin" type="password" placeholder="OTP SENT TO YOUR EMAIL" id="oldPin"> <button type="submit">Verify</button>
+  </form>
+  <form action="/pindata" method="POST" >
+    <input name="pin" type="password" placeholder="SET PIN " id="Pin"><br>
+    <input name="cpin" type="password" placeholder="CONFIRM PIN " id="CPin"><button type="submit">Set PIN</button>
+  </form>
+  <button><a href="/" class="link-btn" style="text-decoration: none;">🏠 Go to Home</a></button>
+
+  <h2>{{msg}}</h2>
+</div>
+
+
+
+</body>
+</html>

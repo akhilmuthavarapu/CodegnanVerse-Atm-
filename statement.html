@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Statement - Codegnan Bank</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+    .form-box {
+      width: 800px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(57, 54, 145, 0.1), rgba(255,200,255,0.1));
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+    .form-box h2 {
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 0 10px cyan;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #333;
+    }
+    button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(to right, #f7b733, #fc4a1a);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #fc4a1a;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    th {
+      background: linear-gradient(to right, #00f0ff, #00c9ff);
+      color: #000;
+      font-weight: bold;
+      text-shadow: 0 0 5px #fff;
+    }
+    td {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    tr:hover td {
+      background: rgba(0,255,255,0.2);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<video autoplay muted loop>
+  <source src="https://motionbgs.com/media/5339/stock-trading.960x540.mp4" type="video/mp4">
+</video>
+
+<div class="form-box">
+  <h2>📄 Mini Statement</h2>
+  <form action="/statementdata" method="POST">
+    <input type="text" placeholder="Account Number" id="accNo"  name="accno"required><br>
+    <input type="text" placeholder="Account Number" id="accNo"  name="pin"required><br>
+    <button type="submit">Get Statement</button>
+    <button><a href="/" class="link-btn" style="text-decoration: none;">🏠 Go to Home</a></button>
+
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Account No.</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Pin</th>
+        <th>Balance</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody">
+        {% for item in MSG %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

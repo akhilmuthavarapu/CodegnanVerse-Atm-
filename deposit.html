@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deposit - Codegnan Bank</title>
+  <style>
+    body, html 
+    {height: 100%; margin: 0; font-family: Arial, sans-serif;}
+    video
+     {position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;}
+    .form-box
+     {position: absolute;width: 800px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, rgba(255,255,255,0.9) rgba(255,230,200,0.9)); padding: 40px; border-radius: 15px; text-align: center;}
+    .form-box h1 {margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+      color:whitesmoke;
+      text-shadow: 0 0 10px #00f0ff;}
+    input {width: 80%; padding: 10px; margin: 10px 0; border: none; border-radius: 5px;}
+    button {margin-top: 10px; padding: 12px 20px; border: none; border-radius: 25px; background: #00b09b; background: linear-gradient(to right, #96c93d, #00b09b); color: white; font-size: 16px; cursor: pointer; transition: transform 0.2s;}
+    button:hover {transform: scale(1.1);}
+  </style>
+</head>
+<body>
+
+<video autoplay muted loop>
+  <source src="https://motionbgs.com/media/5339/stock-trading.960x540.mp4" type="video/mp4">
+</video>
+
+<div class="form-box">
+  <h1>💰 Deposit</h1>
+  <form action="\depositdata" method="POST">
+    <input name = "accno" type="text" placeholder="Account Number" id="accNo" required><br>
+    <input name="amount" type="number" placeholder="Amount" id="amount" required><br>
+    <button type="submit">Deposit Now</button>
+    <button><a href="/" class="link-btn" style="text-decoration: none;">🏠 Go to Home</a></button>
+    
+  </form>
+  <h2>{{msg}}</h2>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
